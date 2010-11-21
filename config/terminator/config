@@ -1,0 +1,27 @@
+[global_config] 
+  scrollbar_position=disabled
+  background_color=#31353A
+  foreground_color=#ffffff
+  font=Mono 11
+  window_state=maximise
+  
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      order = 0
+    [[[child1]]]
+      position = 540
+      type = HPaned
+      order = 0
+      parent = child0
+    [[[terminal3]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child1
+    [[[terminal2]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child1

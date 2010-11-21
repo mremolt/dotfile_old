@@ -72,7 +72,11 @@ nnoremap <leader>A :Ack
 nnoremap <leader>ft Vatzf
 nnoremap <leader>v V`]
 nnoremap <leader>e :NERDTreeToggle<CR>
-nnoremap <leader>b <Leader>be
+
+map <F2> :NERDTreeToggle<CR>
+map <F3> :CommandT<CR>
+map <F4> <Leader>be
+map <F5> :TlistToggle<CR>
 
 "taglist settings
 let Tlist_Use_Right_Window = 1

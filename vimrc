@@ -68,10 +68,21 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-nnoremap <leader>a :Ack
+nnoremap <leader>A :Ack
 nnoremap <leader>ft Vatzf
 nnoremap <leader>v V`]
+nnoremap <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>b <Leader>be
 
+"taglist settings
+let Tlist_Use_Right_Window = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_File_Fold_Auto_Close = 1
+let Tlist_Auto_Open = 0
+
+"bufexplorer
+let g:bufExplorerShowRelativePath=1 
+let g:bufExplorerSortBy='mru' 
 
 map <leader>f ggVG=
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>

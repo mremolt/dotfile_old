@@ -18,6 +18,8 @@ export ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(command-not-found gem git github rails ruby)
 
+alias gv="gvim"
+
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/completions.zsh
 

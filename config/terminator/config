@@ -1,10 +1,8 @@
-[global_config] 
-  scrollbar_position=disabled
-  background_color=#31353A
-  foreground_color=#ffffff
-  font=Mono 11
-  window_state=maximise
-  
+[global_config]
+  window_state = maximise
+[keybindings]
+[profiles]
+  [[default]]
 [layouts]
   [[default]]
     [[[child0]]]
@@ -25,3 +23,4 @@
       type = Terminal
       order = 0
       parent = child1
+[plugins]

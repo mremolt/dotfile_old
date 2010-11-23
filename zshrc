@@ -23,6 +23,10 @@ alias gv="gvim"
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/completions.zsh
 
+# Fix for CTRL-Arrow
+bindkey "5C" forward-word
+bindkey "5D" backward-word
+
 # Customize to your needs...
 export PATH=/home/mremolt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 

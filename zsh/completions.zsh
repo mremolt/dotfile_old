@@ -19,3 +19,10 @@ function _rake () {
 }
 
 compctl -K _rake rake
+
+function _killall () {
+ user_processes=$(for process in $(ps x | awk '{ print $5 }' | uniq); do basename $process; done)
+ compadd $( echo "$user_processes")
+}
+
+compctl -K _killall killall

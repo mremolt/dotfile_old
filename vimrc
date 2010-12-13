@@ -72,6 +72,7 @@ nnoremap <leader>A :Ack
 nnoremap <leader>ft Vatzf
 nnoremap <leader>v V`]
 nnoremap <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>r :Rake<CR>
 
 map <F2> :NERDTreeToggle<CR>
 map <F3> :CommandT<CR>
@@ -87,6 +88,14 @@ let Tlist_Auto_Open = 0
 "bufexplorer
 let g:bufExplorerShowRelativePath=1 
 let g:bufExplorerSortBy='mru' 
+
+"syntastic
+let g:syntastic_auto_loc_list=1
+let g:syntastic_enable_signs=1
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
 
 map <leader>f ggVG=
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>

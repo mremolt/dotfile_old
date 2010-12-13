@@ -16,9 +16,14 @@ export ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found gem git github rails ruby)
+plugins=(command-not-found gem rails ruby)
 
 alias gv="gvim"
+# svn add all ;-)
+alias saa='svn add $(svn status | egrep "^\?" | awk "{print $2}")'
+alias put='phpunit tests'
+alias pdo='cd ~/workspace/prototyp_dokumenten_management/php_pdo_mysql'
+alias eed='cd ~/workspace/erich-erdinger && rvm use 1.9.2'
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/completions.zsh
@@ -34,9 +39,8 @@ export CFLAGS="-march=native -O2"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-if [ "$PS1" ] ; then  
-   mkdir -p -m 0700 /dev/cgroup/cpu/user/$$ > /dev/null 2>&1
-   echo $$ > /dev/cgroup/cpu/user/$$/tasks
-   echo "1" > /dev/cgroup/cpu/user/$$/notify_on_release
-fi
-
+#if [ "$PS1" ] ; then
+#  mkdir -p -m 0700 /dev/cgroup/cpu/user/$$ > /dev/null 2>&1
+#  echo $$ > /dev/cgroup/cpu/user/$$/tasks
+#  echo "1" > /dev/cgroup/cpu/user/$$/notify_on_release
+#fi

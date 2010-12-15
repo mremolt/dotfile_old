@@ -62,3 +62,4 @@ capybara-*html
 
 # vim
 .*.un~
+.netrwhist

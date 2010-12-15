@@ -18,12 +18,13 @@ export ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(command-not-found gem rails ruby)
 
-alias gv="gvim"
+alias gv="gvim -geom 220x60"
 # svn add all ;-)
 alias saa='svn add $(svn status | egrep "^\?" | awk "{print $2}")'
 alias put='phpunit tests'
 alias pdo='cd ~/workspace/prototyp_dokumenten_management/php_pdo_mysql'
 alias eed='cd ~/workspace/erich-erdinger && rvm use 1.9.2'
+alias weportal='cd ~/workspace/weportal2 && rvm use 1.9.2'
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/completions.zsh

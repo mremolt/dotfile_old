@@ -96,6 +96,8 @@ let g:syntastic_enable_signs=1
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 
+" ack
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 map <leader>f ggVG=
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>

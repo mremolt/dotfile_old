@@ -73,6 +73,8 @@ nnoremap <leader>ft Vatzf
 nnoremap <leader>v V`]
 nnoremap <leader>e :NERDTreeToggle<CR>
 nnoremap <leader>r :Rake<CR>
+nnoremap <leader>' ysiw'
+nnoremap <leader>" ysiw"
 
 map <F2> :NERDTreeToggle<CR>
 map <F3> :CommandT<CR>
@@ -99,7 +101,8 @@ let g:syntastic_enable_signs=1
 " ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
-map <leader>f ggVG=
+"map <leader>f ggVG=
+map <leader>f 1G=G
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 au FocusLost * :wa

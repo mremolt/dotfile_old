@@ -13,14 +13,23 @@
       type = HPaned
       order = 0
       parent = child0
-    [[[terminal3]]]
-      profile = default
-      type = Terminal
-      order = 1
-      parent = child1
-    [[[terminal2]]]
+    [[[terminal1]]]
       profile = default
       type = Terminal
       order = 0
       parent = child1
+    [[[child2]]]
+      type = VPaned
+      parent = child1
+      order = 1
+    [[[terminal2]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child2
+    [[[terminal3]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child2
 [plugins]

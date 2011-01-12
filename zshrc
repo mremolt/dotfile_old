@@ -18,13 +18,16 @@ export ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(command-not-found gem rails ruby git)
 
-alias gv="gvim -geom 220x60"
 # svn add all ;-)
-alias saa='svn add $(svn status | egrep "^\?" | awk "{print $2}")'
+saa() {
+  svn add $(svn status | egrep '^\?' | awk '{print $2}')
+}
+
+alias gv="gvim -geom 220x60"
 alias put='phpunit tests'
-alias pdo='cd ~/workspace/prototyp_dokumenten_management/php_pdo_mysql'
-alias eed='cd ~/workspace/erich-erdinger && rvm use 1.9.2'
-alias weportal='cd ~/workspace/weportal2 && rvm use 1.9.2'
+alias pdo='cd ~/workspace/prototyp_dokumenten_management/php_pdo_mysql && rvm use ree && clear'
+alias eed='cd ~/workspace/erich-erdinger && rvm use ruby-1.9.2-p136 && clear'
+alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2-p136 && clear'
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/completions.zsh
@@ -37,6 +40,8 @@ bindkey "5D" backward-word
 export PATH=/home/mremolt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 export CFLAGS="-march=native -O2"
+# for annotate rails plugin
+export SORT=yes POSITION=bottom
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 

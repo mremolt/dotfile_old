@@ -49,3 +49,6 @@
 [submodule "vim/bundle/textobj-user"]
 	path = vim/bundle/textobj-user
 	url = https://github.com/kana/vim-textobj-user.git
+[submodule "vim/snippets/django"]
+	path = vim/snippets/django
+	url = https://github.com/robhudson/snipmate_for_django.git

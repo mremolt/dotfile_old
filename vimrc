@@ -11,9 +11,9 @@ colorscheme molokai
 syntax enable
 
 " tab handling
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 set encoding=utf-8
@@ -97,6 +97,13 @@ let g:syntastic_enable_signs=1
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
+
+"changes
+""let g:changes_autocmd=1
+let g:changes_hl_lines=1
+let g:changes_vcs_check=1
+let g:changes_vcs_system='svn'
+let g:changes_verbose=0
 
 " ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"

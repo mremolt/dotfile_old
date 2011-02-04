@@ -30,6 +30,8 @@ alias eed='cd ~/workspace/erich-erdinger && rvm use ruby-1.9.2-p136 && clear'
 alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2-p136 && clear'
 alias wa='cd ~/workspace/waportal && rvm use ree && clear'
 
+alias sync_home_to_monk="rsync -av --delete --progress --exclude \.gvfs  --exclude \.rvm /home/ceichhor monk:~/backup/office/"
+
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/completions.zsh
 

@@ -100,7 +100,7 @@ let g:syntastic_enable_signs=1
 
 "changes
 ""let g:changes_autocmd=1
-let g:changes_hl_lines=1
+"let g:changes_hl_lines=1
 let g:changes_vcs_check=1
 let g:changes_vcs_system='svn'
 let g:changes_verbose=0

@@ -9,3 +9,7 @@ ln -sf $(pwd)/zshrc ~/.zshrc
 
 ln -sf $(pwd)/vim ~/.vim
 ln -sf $(pwd)/zsh ~/.zsh
+
+cd vim/bundle/command-t
+rvm use system
+rake make

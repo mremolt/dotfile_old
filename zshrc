@@ -23,6 +23,10 @@ saa() {
   svn add $(svn status | egrep '^\?' | awk '{print $2}')
 }
 
+sra() {
+  rm -rf $(svn status | egrep '^\?' | awk '{print $2}')
+}
+
 alias gv="gvim -geom 220x60"
 alias put='phpunit tests'
 alias pdo='cd ~/workspace/prototyp_dokumenten_management/php_pdo_mysql && rvm use ree && clear'

@@ -40,13 +40,13 @@ srda() {
 }
 
 alias gv="gvim -geom 220x60"
-alias put='phpunit tests'
-alias pdo='cd ~/workspace/prototyp_dokumenten_management/php_pdo_mysql && rvm use ree && clear'
-alias eed='cd ~/workspace/erich-erdinger && rvm use ruby-1.9.2-p136 && clear'
-alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2-p136 && $RAILS_PROJECT_APACHE_INIT weportal2 && clear'
-alias wa='cd ~/workspace/waportal && rvm use ree && $RAILS_PROJECT_APACHE_INIT waportal  && clear'
 
-alias sync_home_to_monk="rsync -av --delete --progress --exclude \.gvfs  --exclude \.rvm /home/ceichhor monk:~/backup/office/"
+alias wea='$RAILS_PROJECT_APACHE_INIT weportal2 && we'
+alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2-p136 && clear'
+alias waa='$RAILS_PROJECT_APACHE_INIT waportal && wa'
+alias wa='cd ~/workspace/waportal && rvm use ree && clear'
+
+alias sync_home_to_monk="rsync -av --delete --progress --exclude \.gvfs  --exclude \.rvm --exclude workspace --exclude NetBeansProjects* --exclude Downloads /home/ceichhor monk:~/backup/office/"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/completions.zsh

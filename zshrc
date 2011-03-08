@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
+RAILS_PROJECT_APACHE_INIT=$HOME/Desktop/rails_projects.sh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -23,15 +24,35 @@ saa() {
   svn add $(svn status | egrep '^\?' | awk '{print $2}')
 }
 
+# svn delete all uncommited files
+sdau() {
+  rm -rf $(svn status | egrep '^\?' | awk '{print $2}')
+}
+
+# svn revert all
+sra() {
+  svn revert -R *
+}
+
+# svn revert all and remove all uncommited files
+srda() {
+  sdau && sra
+}
+
 alias gv="gvim -geom 220x60"
 alias put='phpunit tests'
 alias pdo='cd ~/workspace/prototyp_dokumenten_management/php_pdo_mysql && rvm use ree && clear'
 alias eed='cd ~/workspace/erich-erdinger && rvm use ruby-1.9.2-p136 && clear'
 alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2-p136 && clear'
 alias wx='cd ~/workspace/weexams && source bin/activate && cd src/weexams && clear'
-alias wa='cd ~/workspace/waportal && rvm use ree && clear'
 
-alias sync_home_to_monk="rsync -av --delete --progress --exclude \.gvfs  --exclude \.rvm /home/ceichhor monk:~/backup/office/"
+alias wea='$RAILS_PROJECT_APACHE_INIT weportal2 && we'
+alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2 && clear'
+alias waa='$RAILS_PROJECT_APACHE_INIT waportal && wa'
+alias wa='cd ~/workspace/waportal && rvm use ree && clear'
+alias at='AUTOFEATURE=true bundle exec autotest -fc'
+
+alias sync_home_to_monk="rsync -av --delete --progress --exclude \.gvfs  --exclude \.rvm --exclude workspace --exclude NetBeansProjects --exclude NetBeansProjectsGit --exclude Downloads /home/ceichhor monk:~/home/backup/office/"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/completions.zsh

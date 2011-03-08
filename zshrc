@@ -42,11 +42,12 @@ srda() {
 alias gv="gvim -geom 220x60"
 
 alias wea='$RAILS_PROJECT_APACHE_INIT weportal2 && we'
-alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2-p136 && clear'
+alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2 && clear'
 alias waa='$RAILS_PROJECT_APACHE_INIT waportal && wa'
 alias wa='cd ~/workspace/waportal && rvm use ree && clear'
+alias at='AUTOFEATURE=true bundle exec autotest -fc'
 
-alias sync_home_to_monk="rsync -av --delete --progress --exclude \.gvfs  --exclude \.rvm --exclude workspace --exclude NetBeansProjects* --exclude Downloads /home/ceichhor monk:~/backup/office/"
+alias sync_home_to_monk="rsync -av --delete --progress --exclude \.gvfs  --exclude \.rvm --exclude workspace --exclude NetBeansProjects --exclude NetBeansProjectsGit --exclude Downloads /home/ceichhor monk:~/home/backup/office/"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/completions.zsh

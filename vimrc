@@ -120,4 +120,8 @@ highlight Pmenu ctermbg=238 gui=bold
 map <leader>f 1G=G
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+"comment in / out
+map ac :s/^/#/<CR>
+map rc :s/#//<CR>
+
 au FocusLost * :wa

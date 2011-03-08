@@ -123,7 +123,10 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 au FocusLost * :wa
 
 " Django snippets activation by filetype
-autocmd FileType python set ft=python.django " For SnipMate
+autocmd FileType python set ft=python.django "For SnipMate
+autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
+au BufEnter *.py set ai sw=4 ts=4 sta et fo=croql
+
 autocmd FileType html set ft=htmldjango.html " For SnipMate
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS

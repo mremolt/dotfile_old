@@ -119,6 +119,7 @@ highlight Pmenu ctermbg=238 gui=bold
 "map <leader>f ggVG=
 map <leader>f 1G=G
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+map sa 1GVG
 
 "comment in / out
 map ac :s/^/#/<CR>

@@ -42,8 +42,10 @@ srda() {
 alias gv="gvim -geom 220x60"
 alias put='phpunit tests'
 alias pdo='cd ~/workspace/prototyp_dokumenten_management/php_pdo_mysql && rvm use ree && clear'
-alias eed='cd ~/workspace/erich-erdinger && rvm use ruby-1.9.2-p136 && clear'
-alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2-p136 && clear'
+alias eed='cd ~/workspace/erich-erdinger && rvm use ruby-1.9.2 && clear'
+alias mr='cd ~/workspace/marc_remolt && rvm use ruby-1.9.2 && clear'
+alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2 && clear'
+alias sb='cd ~/workspace/search_bug && rvm use ruby-1.9.2 && clear'
 alias wx='cd ~/workspace/weexams && source bin/activate && cd src/weexams && clear'
 
 alias wea='$RAILS_PROJECT_APACHE_INIT weportal2 && we'

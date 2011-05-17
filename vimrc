@@ -136,3 +136,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+" for our new wkhtmltopdf templates ending in .pdf.erb we still want eruby and
+" html syntax highlighting and indent rules
+au BufNewFile,BufRead *.pdf.erb let b:eruby_subtype='html'|set filetype=eruby

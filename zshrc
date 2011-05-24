@@ -47,7 +47,7 @@ alias waa='$RAILS_PROJECT_APACHE_INIT waportal && wa'
 alias wa='cd ~/workspace/waportal && rvm use ree && clear'
 alias opda='$RAILS_PROJECT_APACHE_INIT online_pump_diary && opd'
 alias opd='cd ~/workspace/online_pump_diary && rvm use ree && clear'
-alias at='bundle exec autotest -fc'
+alias at='AUTOFEATURE=true bundle exec autotest -fc'
 
 alias sync_home_to_monk="rsync -av --delete --progress --exclude \.gvfs  --exclude \.rvm --exclude workspace --exclude NetBeansProjects --exclude NetBeansProjectsGit --exclude Downloads /home/ceichhor monk:~/home/backup/office/"
 

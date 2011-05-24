@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/ceichhor/NetBeansProjects/waportal'
 let g:netrw_dirhist_2='/home/ceichhor/NetBeansProjects/132_redmine'
 let g:netrw_dirhist_3='/home/ceichhor/.rvm/gems/ruby-1.9.2-p180/gems/refinerycms-base-0.9.9.13'
 let g:netrw_dirhist_4='/home/ceichhor/.rvm/gems/ruby-1.9.2-p180/gems/refinerycms-core-0.9.9.13'
 let g:netrw_dirhist_5='/home/ceichhor/NetBeansProjects/132_redmine'
 let g:netrw_dirhist_6='/home/ceichhor/dotfiles/zsh/zsh'
+let g:netrw_dirhist_7='/home/ceichhor/dotfiles/vim/bundle/fugitive'

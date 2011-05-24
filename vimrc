@@ -125,4 +125,23 @@ map sa 1GVG
 map ac :s/^/#/<CR>
 map rc :s/#//<CR>
 
+"comment in / out
+map ac :s/^/#/<CR>
+map rc :s/#//<CR>
+
 au FocusLost * :wa
+
+" Django snippets activation by filetype
+autocmd FileType python set ft=python.django "For SnipMate
+autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
+au BufEnter *.py set ai sw=4 ts=4 sta et fo=croql
+
+autocmd FileType html set ft=htmldjango.html " For SnipMate
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+" for our new wkhtmltopdf templates ending in .pdf.erb we still want eruby and
+" html syntax highlighting and indent rules
+au BufNewFile,BufRead *.pdf.erb let b:eruby_subtype='html'|set filetype=eruby

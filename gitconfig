@@ -1,0 +1,5 @@
+[user]
+	name = Marc Remolt
+	email = marc.remolt@googlemail.com
+[core]
+	excludesfile = /home/mremolt/.gitignore

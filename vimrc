@@ -147,3 +147,7 @@ set winwidth=84
 set winheight=5
 set winminheight=5
 set winheight=999
+
+" for our new wkhtmltopdf templates ending in .pdf.erb we still want eruby and
+" html syntax highlighting and indent rules
+au BufNewFile,BufRead *.pdf.erb let b:eruby_subtype='html'|set filetype=eruby

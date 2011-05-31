@@ -64,6 +64,10 @@ set colorcolumn=85
 "nnoremap j gj
 "nnoremap k gk
 
+cnoremap %% <C-R>=expand('%:h').'/'<CR>
+map <leader>e :edit %%
+map <leader>,  <C-^>
+
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
@@ -71,13 +75,12 @@ vnoremap <F1> <ESC>
 nnoremap <leader>A :Ack
 nnoremap <leader>ft Vatzf
 nnoremap <leader>v V`]
-nnoremap <leader>e :NERDTreeToggle<CR>
 nnoremap <leader>r :Rake<CR>
 nnoremap <leader>' ysiw'
 nnoremap <leader>" ysiw"
 
 map <F2> :NERDTreeToggle<CR>
-map <F3> :CommandT<CR>
+map <F3> :CommandTFlush<cr>\|:CommandT<CR>
 map <F4> <Leader>be
 map <F5> :TlistToggle<CR>
 
@@ -136,3 +139,11 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+set winwidth=84
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight set will
+" fail.
+set winheight=5
+set winminheight=5
+set winheight=999

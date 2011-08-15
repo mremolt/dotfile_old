@@ -60,8 +60,9 @@ bindkey "5D" backward-word
 
 # Customize to your needs...
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+CPUS_COUNT=$(cat /proc/cpuinfo | grep processor | wc -l)
 
-export CFLAGS="-march=native -O2"
+export CFLAGS="-march=native -O2 -j${CPUS_COUNT}"
 # for annotate rails plugin
 export SORT=yes POSITION=bottom
 

@@ -65,10 +65,10 @@ CPUS_COUNT=$(cat /proc/cpuinfo | grep processor | wc -l)
 export CFLAGS="-march=native -O2 -j${CPUS_COUNT}"
 
 #REE tuning
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_MIN_SLOTS=750000
+export RUBY_HEAP_SLOTS_INCREMENT=750000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_GC_MALLOC_LIMIT=500000000
 export RUBY_HEAP_FREE_MIN=500000
 
 # for annotate rails plugin

@@ -44,7 +44,8 @@ alias gv="gvim -geom 220x60"
 alias wea='$RAILS_PROJECT_APACHE_INIT weportal2 && we'
 alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2 && clear'
 alias waa='$RAILS_PROJECT_APACHE_INIT waportal && wa'
-alias wa='cd ~/workspace/waportal && rvm use ree && clear'
+#alias wa='cd ~/workspace/waportal && rvm use ree && clear'
+alias wa="cd $(ls -l  /var/www/apps/waportal/current | awk '{print $10}') && rvm use ree && clear"
 alias opda='$RAILS_PROJECT_APACHE_INIT online_pump_diary && opd'
 alias opd='cd ~/workspace/online_pump_diary && rvm use ree && clear'
 alias at='AUTOFEATURE=true bundle exec autotest -fc'
@@ -65,10 +66,10 @@ CPUS_COUNT=$(cat /proc/cpuinfo | grep processor | wc -l)
 export CFLAGS="-march=native -O2 -j${CPUS_COUNT}"
 
 #REE tuning
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export RUBY_HEAP_MIN_SLOTS=750000
+export RUBY_HEAP_SLOTS_INCREMENT=750000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=1000000000
+export RUBY_GC_MALLOC_LIMIT=500000000
 export RUBY_HEAP_FREE_MIN=500000
 
 # for annotate rails plugin

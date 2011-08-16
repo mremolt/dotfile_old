@@ -145,13 +145,13 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-set winwidth=84
+""set winwidth=84
 " We have to have a winheight bigger than we want to set winminheight. But if
 " we set winheight to be huge before winminheight, the winminheight set will
 " fail.
-set winheight=5
-set winminheight=5
-set winheight=999
+""set winheight=5
+""set winminheight=5
+""set winheight=999
 
 " for our new wkhtmltopdf templates ending in .pdf.erb we still want eruby and
 " html syntax highlighting and indent rules

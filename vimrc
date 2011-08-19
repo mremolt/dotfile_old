@@ -151,7 +151,6 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 " fail.
 ""set winheight=10
 ""set winminheight=10
-""set winheight=999
 
 " for our new wkhtmltopdf templates ending in .pdf.erb we still want eruby and
 " html syntax highlighting and indent rules

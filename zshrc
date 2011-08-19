@@ -45,7 +45,11 @@ alias wea='$RAILS_PROJECT_APACHE_INIT weportal2 && we'
 alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2 && clear'
 alias waa='$RAILS_PROJECT_APACHE_INIT waportal && wa'
 #alias wa='cd ~/workspace/waportal && rvm use ree && clear'
-alias wa="cd $(ls -l  /var/www/apps/waportal/current | awk '{print $10}') && rvm use ree && clear"
+
+wa() {
+  cd $(ls -l /var/www/apps/waportal/current | awk '{print $10}') && rvm use ree && clear
+}
+
 alias opda='$RAILS_PROJECT_APACHE_INIT online_pump_diary && opd'
 alias opd='cd ~/workspace/online_pump_diary && rvm use ree && clear'
 alias at='AUTOFEATURE=true bundle exec autotest -fc'

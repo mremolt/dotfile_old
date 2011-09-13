@@ -19,6 +19,16 @@ export ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(command-not-found gem rails ruby git)
 
+# svn status
+st() {
+  svn status
+}
+
+# svn status
+sc() {
+  svn commit
+}
+
 # svn add all ;-)
 saa() {
   svn add $(svn status | egrep '^\?' | awk '{print $2}')
@@ -67,7 +77,7 @@ bindkey "5D" backward-word
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 CPUS_COUNT=$(cat /proc/cpuinfo | grep processor | wc -l)
 
-export CFLAGS="-march=native -O2 -j${CPUS_COUNT}"
+export CFLAGS="-march=native -O3 -j${CPUS_COUNT}"
 
 #REE tuning
 export RUBY_HEAP_MIN_SLOTS=750000

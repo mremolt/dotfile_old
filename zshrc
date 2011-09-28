@@ -52,12 +52,16 @@ srda() {
 alias gv="gvim -geom 220x60"
 
 alias wea='$RAILS_PROJECT_APACHE_INIT weportal2 && we'
-alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2 && clear'
+#alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2 && clear'
 alias waa='$RAILS_PROJECT_APACHE_INIT waportal && wa'
 #alias wa='cd ~/workspace/waportal && rvm use ree && clear'
 
 wa() {
   cd $(ls -l /var/www/apps/waportal/current | awk '{print $10}') && rvm use ree && clear
+}
+
+we() {
+  cd $(ls -l /var/www/apps/weportal2/current | awk '{print $10}') && rvm use ruby-1.9.2 && clear
 }
 
 alias opda='$RAILS_PROJECT_APACHE_INIT online_pump_diary && opd'
@@ -83,7 +87,7 @@ export CFLAGS="-march=native -O3 -j${CPUS_COUNT}"
 export RUBY_HEAP_MIN_SLOTS=750000
 export RUBY_HEAP_SLOTS_INCREMENT=750000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=500000000
+export RUBY_GC_MALLOC_LIMIT=700000000
 export RUBY_HEAP_FREE_MIN=500000
 
 # for annotate rails plugin

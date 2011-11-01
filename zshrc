@@ -51,22 +51,41 @@ srda() {
 
 alias gv="gvim -geom 220x60"
 
-alias wea='$RAILS_PROJECT_APACHE_INIT weportal2 && we'
-#alias we='cd ~/workspace/weportal2 && rvm use ruby-1.9.2 && clear'
-alias waa='$RAILS_PROJECT_APACHE_INIT waportal && wa'
-#alias wa='cd ~/workspace/waportal && rvm use ree && clear'
+init_project() {
+  cd $(ls -l /var/www/apps/$1/current | awk '{print $10}') && rvm use $(cat RUBY_VERSION) && clear
+}
 
-wa() {
-  cd $(ls -l /var/www/apps/waportal/current | awk '{print $10}') && rvm use ree && clear
+init_project_with_apache() {
+  init_project $1 && ./script/apache_setup.sh && clear
 }
 
 we() {
-  cd $(ls -l /var/www/apps/weportal2/current | awk '{print $10}') && rvm use ruby-1.9.2 && clear
+  init_project weportal2
 }
 
-alias opda='$RAILS_PROJECT_APACHE_INIT online_pump_diary && opd'
-alias opd='cd ~/workspace/online_pump_diary && rvm use ree && clear'
-alias at='AUTOFEATURE=true bundle exec autotest -fc'
+wea() {
+  init_project_with_apache weportal2
+}
+
+wa() {
+  init_project waportal
+}
+
+waa() {
+  init_project_with_apache waportal
+}
+
+opd() {
+  init_project online_pump_diary
+}
+
+opda() {
+  init_project_with_apache online_pump_diary
+}
+
+at() {
+  AUTOFEATURE=true bundle exec autotest -fc
+}
 
 alias sync_home_to_monk="rsync -av --delete --progress --exclude \.gvfs  --exclude \.rvm --exclude workspace --exclude NetBeansProjects --exclude NetBeansProjectsGit --exclude Downloads /home/ceichhor monk:~/home/backup/office/"
 

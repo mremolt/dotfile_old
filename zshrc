@@ -83,6 +83,14 @@ opda() {
   init_project_with_apache online_pump_diary
 }
 
+webk() {
+  init_project webmasterkurse
+}
+
+webka() {
+  init_project_with_apache webmasterkurse
+}
+
 at() {
   AUTOFEATURE=true bundle exec autotest -fc
 }
@@ -100,7 +108,7 @@ bindkey "5D" backward-word
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 CPUS_COUNT=$(cat /proc/cpuinfo | grep processor | wc -l)
 
-export CFLAGS="-march=native -O3 -j${CPUS_COUNT}"
+export CFLAGS="-march=native -O3"
 
 #REE tuning
 export RUBY_HEAP_MIN_SLOTS=750000

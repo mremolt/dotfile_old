@@ -9,3 +9,6 @@ for dir in $(ls); do
     cd ..
   fi
 done
+
+git add $(git status | grep "new commits" | awk '{print $3}')
+git commit -m " * vim/bundle update"

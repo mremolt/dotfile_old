@@ -126,11 +126,7 @@ map sa 1GVG
 
 "comment in / out
 map ac :s/^/#/<CR>
-map rc :s/#//<CR>
-
-"comment in / out
-map ac :s/^/#/<CR>
-map rc :s/#//<CR>
+map rc :s/^#//<CR>
 
 au FocusLost * :wa
 

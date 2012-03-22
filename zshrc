@@ -49,6 +49,11 @@ srda() {
   sdau && sra
 }
 
+rtf() {
+  rm $(find ~/svn_projects/ -type f -name "*.swp")
+  rm $(find ~/svn_projects/ -type f -name "*.un~")
+}
+
 alias gv="gvim -geom 220x60"
 
 init_project() {
@@ -127,3 +132,5 @@ export SORT=yes POSITION=bottom
 #  echo $$ > /dev/cgroup/cpu/user/$$/tasks
 #  echo "1" > /dev/cgroup/cpu/user/$$/notify_on_release
 #fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

@@ -50,8 +50,8 @@ srda() {
 }
 
 rtf() {
-  rm $(find ~/svn_projects/ -type f -name "*.swp")
-  rm $(find ~/svn_projects/ -type f -name "*.un~")
+  rm $(find ./ -type f -name "*.swp")
+  rm $(find ./ -type f -name "*.un~")
 }
 
 alias gv="gvim -geom 220x60"

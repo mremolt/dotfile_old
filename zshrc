@@ -57,7 +57,7 @@ rtf() {
 alias gv="gvim -geom 220x60"
 
 init_project() {
-  cd $(ls -l /var/www/apps/$1/current | awk -F'->' '{print $2}') && rvm use $(cat RUBY_VERSION) && clear
+  rvm reload && cd $(ls -l /var/www/apps/$1/current | awk -F'->' '{print $2}') && rvm use $(cat RUBY_VERSION) && clear
 }
 
 init_project_with_apache() {

@@ -51,6 +51,7 @@ srda() {
 
 rtf() {
   rm $(find ./ -type f -name "*.swp")
+  rm $(find ./ -type f -name "*.swo")
   rm $(find ./ -type f -name "*.un~")
 }
 

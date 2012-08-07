@@ -120,18 +120,18 @@ export CFLAGS="-march=native -O3"
 export RUBY_HEAP_MIN_SLOTS=750000
 export RUBY_HEAP_SLOTS_INCREMENT=750000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=700000000
+#export RUBY_GC_MALLOC_LIMIT=700000000
+export RUBY_GC_MALLOC_LIMIT=500000000
 export RUBY_HEAP_FREE_MIN=500000
 
 # for annotate rails plugin
 export SORT=yes POSITION=bottom
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 #if [ "$PS1" ] ; then
 #  mkdir -p -m 0700 /dev/cgroup/cpu/user/$$ > /dev/null 2>&1
 #  echo $$ > /dev/cgroup/cpu/user/$$/tasks
 #  echo "1" > /dev/cgroup/cpu/user/$$/notify_on_release
 #fi
+
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

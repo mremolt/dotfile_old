@@ -3,6 +3,7 @@
 [keybindings]
 [profiles]
   [[default]]
+    scrollback_lines = 2000
 [layouts]
   [[default]]
     [[[child0]]]

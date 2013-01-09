@@ -101,6 +101,10 @@ at() {
   AUTOFEATURE=true bundle exec autotest -fc
 }
 
+bgu() {
+  bundle exec guard
+}
+
 alias sync_home_to_monk="rsync -av --delete --progress --exclude \.gvfs  --exclude \.rvm --exclude workspace --exclude NetBeansProjects --exclude NetBeansProjectsGit --exclude Downloads /home/ceichhor monk:~/home/backup/office/"
 
 source $ZSH/oh-my-zsh.sh

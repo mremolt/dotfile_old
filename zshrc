@@ -115,7 +115,7 @@ bindkey "5C" forward-word
 bindkey "5D" backward-word
 
 # Customize to your needs...
-export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+#export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 CPUS_COUNT=$(cat /proc/cpuinfo | grep processor | wc -l)
 
 export CFLAGS="-march=native -O3"
@@ -138,4 +138,4 @@ export SORT=yes POSITION=bottom
 #fi
 
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

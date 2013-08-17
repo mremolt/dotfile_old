@@ -17,7 +17,7 @@ export ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found gem rails ruby git)
+plugins=(command-not-found gem rails ruby git rvm)
 
 # svn status
 st() {
@@ -125,7 +125,7 @@ export RUBY_HEAP_MIN_SLOTS=700000
 export RUBY_HEAP_SLOTS_INCREMENT=700000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 #export RUBY_GC_MALLOC_LIMIT=700000000
-export RUBY_GC_MALLOC_LIMIT=400000000
+export RUBY_GC_MALLOC_LIMIT=200000000
 export RUBY_HEAP_FREE_MIN=500000
 
 # for annotate rails plugin

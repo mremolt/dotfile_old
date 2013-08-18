@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 RAILS_PROJECT_APACHE_INIT=$HOME/Desktop/rails_projects.sh
 
 # Set to the name theme to load.

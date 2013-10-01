@@ -56,6 +56,11 @@ rtf() {
   rm $(find ./ -type f -name "*.un~")
 }
 
+# write swap back to RAM
+reset_swap() {
+  sudo swapoff -a && sudo swapon -a
+}
+
 alias gv="gvim -geom 220x60"
 
 init_project() {

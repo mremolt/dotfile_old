@@ -42,7 +42,7 @@ sdau() {
 
 # svn revert all
 sra() {
-  svn revert -R *
+  svn revert -R .
 }
 
 # svn revert all and remove all uncommited files
@@ -85,6 +85,14 @@ wa() {
 
 waa() {
   init_project_with_apache waportal
+}
+
+wprin() {
+  init_project wprin
+}
+
+wprina() {
+  init_project_with_apache wprin
 }
 
 opd() {

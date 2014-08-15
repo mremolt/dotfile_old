@@ -20,29 +20,54 @@ export ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(command-not-found gem rails ruby git rvm)
 
-# svn status
+# svn or git status
 st() {
-  svn status
+  if ([ -d .svn ] || [ -d ../.svn ])
+  then
+    svn status
+  else
+    git status
+  fi
 }
 
-# svn status
+# svn or git commit
 sc() {
-  svn commit
+  if ([ -d .svn ] || [ -d ../.svn ])
+  then
+    svn commit
+  else
+    git commit $1
+  fi
 }
 
-# svn add all ;-)
+# svn or git add all ;-)
 saa() {
-  svn add $(svn status | egrep '^\?' | awk '{print $2}')
+  if ([ -d .svn ] || [ -d ../.svn ])
+  then
+    svn add $(svn status | egrep '^\?' | awk '{print $2}')
+  else
+    git add -A
+  fi
 }
 
-# svn delete all uncommited files
+# svn or git delete all uncommited files
 sdau() {
-  rm -rf $(svn status | egrep '^\?' | awk '{print $2}')
+  if ([ -d .svn ] || [ -d ../.svn ])
+  then
+    rm -rf $(svn status | egrep '^\?' | awk '{print $2}')
+  else
+    rm -rf $(git status -s | egrep '^\?' | awk '{print $2}')
+  fi
 }
 
-# svn revert all
+# svn or git revert all
 sra() {
-  svn revert -R .
+  if ([ -d .svn ] || [ -d ../.svn ])
+  then
+    svn revert -R .
+  else
+    git checkout .
+  fi
 }
 
 # svn revert all and remove all uncommited files

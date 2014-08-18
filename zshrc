@@ -86,6 +86,16 @@ reset_swap() {
   sudo swapoff -a && sudo swapon -a
 }
 
+# piplight
+pipelight-plugin-update () {
+  sudo pipelight-plugin --update
+  for plugin in $(pipelight-plugin --list-enabled)
+  do
+    pipelight-plugin --disable $plugin
+    pipelight-plugin --enable $plugin
+  done
+}
+
 alias gv="gvim -geom 220x60"
 
 init_project() {

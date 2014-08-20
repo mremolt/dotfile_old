@@ -75,6 +75,10 @@ srda() {
   sdau && sra
 }
 
+git_reset() {
+  git reset --merge ORIG_HEAD
+}
+
 rtf() {
   rm $(find ./ -type f -name "*.swp")
   rm $(find ./ -type f -name "*.swo")

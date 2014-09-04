@@ -79,6 +79,15 @@ git_reset() {
   git reset --merge ORIG_HEAD
 }
 
+time_since_last_commit() {
+  if ([ -d .svn ] || [ -d ../.svn ])
+  then
+    echo 'not configured'
+  else
+    git log -n 1 | grep Date | rails runner "p ((Time.now - STDIN.read.gsub('Date:', '').strip.to_time) / 1.hour).round(2)"
+  fi
+}
+
 rtf() {
   rm $(find ./ -type f -name "*.swp")
   rm $(find ./ -type f -name "*.swo")

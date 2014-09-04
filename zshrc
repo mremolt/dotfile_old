@@ -82,7 +82,7 @@ git_reset() {
 time_since_last_commit() {
   if ([ -d .svn ] || [ -d ../.svn ])
   then
-    echo 'not configured'
+    svn log $(svn info | grep '^URL' | awk '{print $NF}') -l 1 | grep '^r' | awk -F\| '{print $3}' | awk -F\( '{print $1}' | rails runner "p ((Time.now - STDIN.read.strip.to_time) / 1.hour).round(2)"
   else
     git log -n 1 | grep Date | rails runner "p ((Time.now - STDIN.read.gsub('Date:', '').strip.to_time) / 1.hour).round(2)"
   fi

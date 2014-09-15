@@ -20,9 +20,14 @@ export ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(command-not-found gem rails ruby git rvm)
 
+# is svn
+is_subversion_checkout() {
+  [[ $(svn info 2> /dev/null) != '' ]]
+}
+
 # svn or git status
 st() {
-  if ([ -d .svn ] || [ -d ../.svn ])
+  if is_subversion_checkout
   then
     svn status
   else
@@ -32,7 +37,7 @@ st() {
 
 # svn or git commit
 sc() {
-  if ([ -d .svn ] || [ -d ../.svn ])
+  if is_subversion_checkout
   then
     svn commit
   else
@@ -42,7 +47,7 @@ sc() {
 
 # svn or git add all ;-)
 saa() {
-  if ([ -d .svn ] || [ -d ../.svn ])
+  if is_subversion_checkout
   then
     svn add $(svn status | egrep '^\?' | awk '{print $2}')
   else
@@ -52,7 +57,7 @@ saa() {
 
 # svn or git delete all uncommited files
 sdau() {
-  if ([ -d .svn ] || [ -d ../.svn ])
+  if is_subversion_checkout
   then
     rm -rf $(svn status | egrep '^\?' | awk '{print $2}')
   else
@@ -62,7 +67,7 @@ sdau() {
 
 # svn or git revert all
 sra() {
-  if ([ -d .svn ] || [ -d ../.svn ])
+  if is_subversion_checkout
   then
     svn revert -R .
   else
@@ -80,7 +85,7 @@ git_reset() {
 }
 
 time_since_last_commit() {
-  if ([ -d .svn ] || [ -d ../.svn ])
+  if is_subversion_checkout
   then
     svn log $(svn info | grep '^URL' | awk '{print $NF}') -l 1 | grep '^r' | awk -F\| '{print $3}' | awk -F\( '{print $1}' | rails runner "p ((Time.now - STDIN.read.strip.to_time) / 1.hour).round(2)"
   else

@@ -35,21 +35,15 @@ st() {
   fi
 }
 
-# svn or git commit
-sc() {
-  if is_subversion_checkout
-  then
-    svn commit
-  else
-    git commit $1
-  fi
-}
-
 # svn or git add all ;-)
 saa() {
   if is_subversion_checkout
   then
-    svn add $(svn status | egrep '^\?' | awk '{print $2}')
+    new_files=$(svn status | egrep '^\?' | awk '{print $2}')
+    if [[ $new_files != '' ]]
+    then
+      svn add $new_files
+    fi
   else
     git add -A
   fi
@@ -82,6 +76,28 @@ srda() {
 
 git_reset() {
   git reset --merge ORIG_HEAD
+}
+
+# svn or git changes diff
+changes() {
+  if is_subversion_checkout
+  then
+    svn diff
+  else
+    git diff HEAD
+  fi
+}
+
+# svn or git commit
+commit() {
+  if is_subversion_checkout
+  then
+    saa
+    svn commit
+  else
+    saa
+    git commit
+  fi
 }
 
 time_since_last_commit() {

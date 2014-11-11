@@ -42,7 +42,7 @@ saa() {
     new_files=$(svn status | egrep '^\?' | awk '{print $2}')
     if [[ $new_files != '' ]]
     then
-      svn add $new_files
+      svn add $(echo $new_files)
     fi
   else
     git add -A

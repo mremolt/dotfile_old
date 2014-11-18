@@ -201,7 +201,7 @@ bindkey "5D" backward-word
 #export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 CPUS_COUNT=$(cat /proc/cpuinfo | grep processor | wc -l)
 
-export CFLAGS="-march=native -O3"
+export CFLAGS="-march=native -mtune=native -O3"
 
 #REE tuning
 #export RUBY_GC_HEAP_INIT_SLOTS=500000

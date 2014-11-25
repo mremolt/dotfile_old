@@ -180,6 +180,10 @@ webka() {
   init_project_with_apache webmasterkurse
 }
 
+scc() {
+  init_project server_chef_config
+}
+
 at() {
   AUTOFEATURE=true bundle exec autotest -fc
 }

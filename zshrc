@@ -93,10 +93,10 @@ commit() {
   if is_subversion_checkout
   then
     saa
-    svn commit
+    svn commit $1
   else
     saa
-    git commit
+    git commit $1
   fi
 }
 

@@ -121,13 +121,18 @@ reset_swap() {
 }
 
 # piplight
-pipelight-plugin-update () {
+pipelight-plugin-update() {
   sudo pipelight-plugin --update
   for plugin in $(pipelight-plugin --list-enabled)
   do
     pipelight-plugin --disable $plugin
     pipelight-plugin --enable $plugin
   done
+}
+
+#virtualbox
+rm_vbox_cache() {
+  sudo find /var/lib/apt -name '*virtualbox*' -exec rm {} \;
 }
 
 alias gv="gvim -geom 220x60"

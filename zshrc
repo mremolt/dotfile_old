@@ -110,9 +110,9 @@ time_since_last_commit() {
 }
 
 rtf() {
-  rm $(find ./ -type f -name "*.swp")
-  rm $(find ./ -type f -name "*.swo")
-  rm $(find ./ -type f -name "*.un~")
+  rm -f $(find ./ -type f -name "*.swp")
+  rm -f $(find ./ -type f -name "*.swo")
+  rm -f $(find ./ -type f -name "*.un~")
 }
 
 # write swap back to RAM

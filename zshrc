@@ -103,9 +103,9 @@ commit() {
 time_since_last_commit() {
   if is_subversion_checkout
   then
-    svn log $(svn info | grep '^URL' | awk '{print $NF}') -l 1 | grep '^r' | awk -F\| '{print $3}' | awk -F\( '{print $1}' | rails runner "p ((Time.now - STDIN.read.strip.to_time) / 1.hour).round(2)"
+    svn log $(svn info | grep '^URL' | awk '{print $NF}') -l 1 | grep '^r' | awk -F\| '{print $3}' | awk -F\( '{print $1}' | ruby -e "require 'active_support/core_ext/string/conversions'; require 'active_support/core_ext/numeric/time'; p ((Time.now - STDIN.read.strip.to_time) / 1.hour).round(2)"
   else
-    git log -n 1 | grep Date | rails runner "p ((Time.now - STDIN.read.gsub('Date:', '').strip.to_time) / 1.hour).round(2)"
+    git log -n 1 | grep Date | ruby -e "require 'active_support/core_ext/string/conversions'; require 'active_support/core_ext/numeric/time'; p ((Time.now - STDIN.read.gsub('Date:', '').strip.to_time) / 1.hour).round(2)"
   fi
 }
 

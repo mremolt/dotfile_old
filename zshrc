@@ -39,13 +39,13 @@ st() {
 saa() {
   if is_subversion_checkout
   then
-    new_files=$(svn status $1 | egrep '^\?' | awk '{print $2}')
+    new_files=$(svn status $@ | egrep '^\?' | awk '{print $2}')
     if [[ $new_files != '' ]]
     then
       svn add $(echo $new_files)
     fi
   else
-    git add -A $1
+    git add -A $@
   fi
 }
 
@@ -92,11 +92,11 @@ changes() {
 commit() {
   if is_subversion_checkout
   then
-    saa $1
-    svn commit $1
+    saa $@
+    svn commit $@
   else
-    saa $1
-    git commit $1
+    saa $@
+    git commit $@
   fi
 }
 

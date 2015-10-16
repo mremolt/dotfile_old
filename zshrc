@@ -65,6 +65,7 @@ sra() {
   then
     svn revert -R .
   else
+    git reset .
     git checkout .
   fi
 }

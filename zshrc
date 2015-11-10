@@ -53,9 +53,9 @@ saa() {
 sdau() {
   if is_subversion_checkout
   then
-    rm -rf $(svn status | egrep '^\?' | awk '{print $2}')
+    svn status | egrep '^\?' | ruby -e "STDIN.read.gsub(/\?+\ +/, '').split(\"\n\").each {|f| system(\"rm '#{f}'\") }"
   else
-    rm -rf $(git status -s | egrep '^\?' | awk '{print $2}')
+    git status -s | egrep '^\?' | ruby -e "STDIN.read.gsub(/\?+\ +/, '').split(\"\n\").each {|f| system(\"rm '#{f}'\") }"
   fi
 }
 

@@ -49,13 +49,17 @@ saa() {
   fi
 }
 
+_delete_not_committed() {
+  egrep '^\?' | ruby -e "STDIN.read.gsub(/\?+\ +/, '').split(\"\n\").each {|f| FileUtils.rm_rf f }"
+}
+
 # svn or git delete all uncommited files
 sdau() {
   if is_subversion_checkout
   then
-    svn status | egrep '^\?' | ruby -e "STDIN.read.gsub(/\?+\ +/, '').split(\"\n\").each {|f| system(\"rm '#{f}'\") }"
+    svn status | _delete_not_committed
   else
-    git status -s | egrep '^\?' | ruby -e "STDIN.read.gsub(/\?+\ +/, '').split(\"\n\").each {|f| system(\"rm '#{f}'\") }"
+    git status -s | _delete_not_committed 
   fi
 }
 

@@ -50,7 +50,7 @@ saa() {
 }
 
 _delete_not_committed() {
-  egrep '^\?' | ruby -e "STDIN.read.gsub(/\?+\ +/, '').split(\"\n\").each {|f| FileUtils.rm_rf f }"
+  egrep '^\?' | ruby -e "require 'fileutils'; STDIN.read.gsub(/\?+\ +/, '').split(\"\n\").each {|f| FileUtils.rm_rf f }"
 }
 
 # svn or git delete all uncommited files

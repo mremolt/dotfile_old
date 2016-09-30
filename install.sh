@@ -14,5 +14,8 @@ ln -sf $(pwd)/vim ~/.vim
 ln -sf $(pwd)/zsh ~/.zsh
 
 cd vim/bundle/command-t
-rvm use system
-rake make
+cd ruby/command-t
+#rvm use system
+rvm use ree --default
+ruby extconf.rb
+make

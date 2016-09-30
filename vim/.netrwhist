@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/ceichhor/svn_projects/2115_links_im_newsletter_berichtigenOF'
+let g:netrw_dirhist_2='/home/ceichhor/svn_projects/waportal'
+let g:netrw_dirhist_3='/home/ceichhor/svn_projects/2093_box_aktuelle_kurse'
+let g:netrw_dirhist_4='/home/ceichhor/svn_projects/waportal'
+let g:netrw_dirhist_5='/home/ceichhor/svn_projects/2093_box_aktuelle_kurse'
+let g:netrw_dirhist_6='/home/ceichhor/svn_projects/waportal'

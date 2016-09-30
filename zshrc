@@ -105,6 +105,18 @@ commit() {
   fi
 }
 
+commit_and_push() {
+  if is_subversion_checkout
+  then
+    saa $@
+    svn commit $@
+  else
+    saa $@
+    git commit $@
+    git push
+  fi
+}
+
 time_since_last_commit() {
   if is_subversion_checkout
   then

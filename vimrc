@@ -100,6 +100,7 @@ let g:syntastic_enable_signs=1
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
+let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
 
 "changes
 ""let g:changes_autocmd=1

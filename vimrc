@@ -101,6 +101,8 @@ let g:syntastic_enable_signs=1
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
+let g:syntastic_quiet_messages = {'regex': 'is called on Integer; it always returns nil'}
+"let g:syntastic_quiet_messages = {'regex': 'possibly useless use of .+ in void context'}
 
 "changes
 ""let g:changes_autocmd=1
